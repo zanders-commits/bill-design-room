@@ -1607,7 +1607,7 @@
         </div>
         <div class="value-lever"><span class="lever-num">05</span> Smarter Ordering</div>
         <h3>Inventory That Informs What You Buy</h3>
-        <p>Today counts are manual if they happen at all &mdash; so money leaks through shrinkage and over-ordering, and no one can use that data to buy smarter. Reeco's mobile counts are fast and accurate, and <strong>they feed straight into purchasing</strong> so you order against what's actually on the shelf &mdash; less waste, fewer emergency buys, and tighter food cost.</p>
+        <p>At most properties today, counts are manual if they happen at all &mdash; and when a new manager steps in, they're guessing from day one, ordering what they think they need until they figure out what's actually right. That gap between guess and reality costs money on every purchasing cycle. Reeco's mobile inventory is fast enough that any operator can run a count weekly, and <strong>those counts feed directly into purchasing</strong> so the system tells you what to reorder &mdash; not what you think you need. For Select Service, market and comp breakfast are where over-ordering is hardest to catch without visibility and easiest to fix once you have it. Less waste, fewer emergency orders, tighter costs &mdash; and a portfolio where &ldquo;we ran out&rdquo; and &ldquo;we ordered too much&rdquo; are both diagnosable and preventable.</p>
       </article>
 
       <article class="value-card">
@@ -1642,73 +1642,243 @@
   <div class="container">
     <div class="eyebrow">Section 05 &nbsp;/&nbsp; Pricing</div>
     <h2 class="section-title">Pricing Structured for Your Portfolio.</h2>
-    <p class="section-sub">Per-property monthly rates across your 10 Full Service and 49 Select Service properties, prepared for InnVentures. Setup fees are waived on a 2-year term. Two options are presented below &mdash; start with Purchasing + AP and expand later, or roll out the full platform including Inventory from day one.</p>
+    <p class="section-sub">Per-property monthly rates across your 10 Full Service and 49 Select Service properties, prepared for InnVentures. Setup fees are waived on a 2-year term. Two options are presented below &mdash; start with Purchasing + AP and expand later, or go all-in on the full platform including Inventory from day one.</p>
+
+    <!-- Option Toggle Tabs -->
     <div class="pricing-option-tabs" id="pricingTabs">
-      <button class="pricing-tab active" onclick="showPricingOption('a',this)"><span class="tab-label">Option A</span><span class="tab-desc">Purchasing &amp; AP Only</span></button>
-      <button class="pricing-tab" onclick="showPricingOption('b',this)"><span class="tab-label">Option B</span><span class="tab-desc">Full Platform + Inventory</span></button>
+      <button class="pricing-tab active" onclick="showPricingOption('a',this)">
+        <span class="tab-label">Option A</span>
+        <span class="tab-desc">Purchasing &amp; AP Only</span>
+      </button>
+      <button class="pricing-tab" onclick="showPricingOption('b',this)">
+        <span class="tab-label">Option B</span>
+        <span class="tab-desc">Full Platform + Inventory</span>
+      </button>
     </div>
+
+    <!-- OPTION A: Without Inventory -->
     <div id="pricing-option-a" class="pricing-option-panel">
       <div class="pricing-v2">
-        <div class="pricing-v2-header"><div class="pricing-v2-header-l"><h3>Full Service Properties</h3><span class="tier-badge">10 Properties</span></div><div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div></div>
-        <table class="pricing-table"><thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead><tbody>
-          <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
-          <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$750.00</s>&nbsp;$0 / property</span></td></tr>
-        </tbody></table>
+        <div class="pricing-v2-header">
+          <div class="pricing-v2-header-l"><h3>Full Service Properties</h3><span class="tier-badge">10 Properties</span></div>
+          <div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div>
+        </div>
+        <table class="pricing-table" aria-label="Full Service pricing Option A">
+          <thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
+            <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$750.00</s>&nbsp;$0 / property</span></td></tr>
+          </tbody>
+        </table>
       </div>
       <div class="pricing-v2">
-        <div class="pricing-v2-header"><div class="pricing-v2-header-l"><h3>Select Service Properties</h3><span class="tier-badge select">49 Properties</span></div><div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div></div>
-        <table class="pricing-table"><thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead><tbody>
-          <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
-          <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$500.00</s>&nbsp;$0 / property</span></td></tr>
-        </tbody></table>
+        <div class="pricing-v2-header">
+          <div class="pricing-v2-header-l"><h3>Select Service Properties</h3><span class="tier-badge select">49 Properties</span></div>
+          <div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div>
+        </div>
+        <table class="pricing-table" aria-label="Select Service pricing Option A">
+          <thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
+            <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$500.00</s>&nbsp;$0 / property</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+    <!-- OPTION B: With Inventory -->
     <div id="pricing-option-b" class="pricing-option-panel" style="display:none">
       <div class="pricing-v2">
-        <div class="pricing-v2-header"><div class="pricing-v2-header-l"><h3>Full Service Properties</h3><span class="tier-badge">10 Properties</span></div><div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div></div>
-        <table class="pricing-table"><thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead><tbody>
-          <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">Inventory</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$250.00 / property / month</span></td></tr>
-          <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$750.00</s>&nbsp;$0 / property</span></td></tr>
-        </tbody></table>
+        <div class="pricing-v2-header">
+          <div class="pricing-v2-header-l"><h3>Full Service Properties</h3><span class="tier-badge">10 Properties</span></div>
+          <div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div>
+        </div>
+        <table class="pricing-table" aria-label="Full Service pricing Option B">
+          <thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">Inventory</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$250.00 / property / month</span></td></tr>
+            <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$750.00</s>&nbsp;$0 / property</span></td></tr>
+          </tbody>
+        </table>
       </div>
       <div class="pricing-v2">
-        <div class="pricing-v2-header"><div class="pricing-v2-header-l"><h3>Select Service Properties</h3><span class="tier-badge select">49 Properties</span></div><div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div></div>
-        <table class="pricing-table"><thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead><tbody>
-          <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
-          <tr><td><span class="pricing-module">Inventory</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$150.00 / property / month</span></td></tr>
-          <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$500.00</s>&nbsp;$0 / property</span></td></tr>
-        </tbody></table>
+        <div class="pricing-v2-header">
+          <div class="pricing-v2-header-l"><h3>Select Service Properties</h3><span class="tier-badge select">49 Properties</span></div>
+          <div class="pricing-v2-discount"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Setup Waived on 2-Year Term</div>
+        </div>
+        <table class="pricing-table" aria-label="Select Service pricing Option B">
+          <thead><tr><th>Module</th><th>Billing</th><th>Unit Price</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pricing-module">Purchasing &amp; Receiving</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$200.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">AP Automation</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$100.00 / property / month</span></td></tr>
+            <tr><td><span class="pricing-module">Inventory</span></td><td><span class="billing">Quarterly</span></td><td><span class="unit">$150.00 / property / month</span></td></tr>
+            <tr class="setup"><td><span class="pricing-module">Set Up <span style="font-weight:var(--fw-medium);color:var(--stone-700);font-size:13px;">(waived on 2-year term)</span></span></td><td><span class="billing onetime">One-Time</span></td><td><span class="unit"><s style="color:var(--stone-400);text-decoration-thickness:1px;">$500.00</s>&nbsp;$0 / property</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div class="pricing-terms-wrap"><h3>Contract Terms</h3><div class="pricing-terms"><div class="pricing-terms-item"><span class="lbl">Initial Term</span><span class="val">24 Months</span></div><div class="pricing-terms-item"><span class="lbl">Billing</span><span class="val">Quarterly in Advance</span></div><div class="pricing-terms-item"><span class="lbl">Payment Terms</span><span class="val">Net 30</span></div><div class="pricing-terms-item"><span class="lbl">Setup Fees</span><span class="val">Waived &mdash; 2-Year Term</span></div></div></div>
-    <div class="pricing-meta-note"><div class="volume-note">M3 integration fees are fully waived for Reeco &mdash; the only procurement platform with this status.</div></div>
-    <div class="cost-compare">
-      <div class="cost-compare-head"><div><h3>Option A &mdash; Today vs. Reeco Without Inventory</h3><p>What InnVentures spends today across three vendors &mdash; compared to Reeco&rsquo;s Purchasing + AP platform across all 59 properties.</p></div></div>
-      <div class="cc-grid">
-        <div class="cc-panel today"><div class="cc-panel-label">Today &middot; Annual</div><div class="cc-panel-title">Three Separate Contracts</div><div class="cc-line"><span class="cc-item">Ottimate &mdash; AP Automation<span class="cc-sub">$15,150 / month</span></span><span class="cc-amt">$181,800</span></div><div class="cc-line"><span class="cc-item">M3 integration fees<span class="cc-sub">Charged to AP platforms</span></span><span class="cc-amt">~$11,000</span></div><div class="cc-line"><span class="cc-item">BirchStreet &mdash; Purchasing<span class="cc-sub">Via HSM agreement</span></span><span class="cc-amt">$59,000</span></div><div class="cc-total"><span class="cc-total-label">Total Today</span><span class="cc-total-amt">$251,800</span></div></div>
-        <div class="cc-arrow" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="cc-panel reeco"><div class="cc-panel-label">Option A with Reeco &middot; Annual</div><div class="cc-panel-title">One Connected Platform</div><div class="cc-line"><span class="cc-item">Reeco &mdash; AP Automation<span class="cc-sub">$100 / property / month &middot; 59 properties</span></span><span class="cc-amt">$70,800</span></div><div class="cc-line waived"><span class="cc-item">M3 integration fees<span class="cc-sub">Waived for Reeco customers</span></span><span class="cc-amt">$0</span></div><div class="cc-line"><span class="cc-item">Reeco &mdash; Purchasing &amp; Receiving<span class="cc-sub">Your $59K HSM agreement redirects here</span></span><span class="cc-amt">$141,600</span></div><div class="cc-total"><span class="cc-total-label">Total Option A</span><span class="cc-total-amt">$212,400</span></div></div>
+
+    <!-- Contract Terms -->
+    <div class="pricing-terms-wrap">
+      <h3>Contract Terms</h3>
+      <div class="pricing-terms" aria-label="Contract terms">
+        <div class="pricing-terms-item"><span class="lbl">Initial Term</span><span class="val">24 Months</span></div>
+        <div class="pricing-terms-item"><span class="lbl">Billing</span><span class="val">Quarterly in Advance</span></div>
+        <div class="pricing-terms-item"><span class="lbl">Payment Terms</span><span class="val">Net 30</span></div>
+        <div class="pricing-terms-item"><span class="lbl">Setup Fees</span><span class="val">Waived &mdash; 2-Year Term</span></div>
       </div>
-      <div class="cc-delta"><div class="cc-delta-figure"><span class="cc-delta-label">Net Savings / Year</span><span class="cc-delta-amt">$39,400<span class="cc-per"> / yr</span></span><span class="cc-delta-perprop">That&rsquo;s about <strong>$56 per property, per month</strong></span></div><div class="cc-delta-body">Moving off Ottimate and BirchStreet onto Reeco&rsquo;s unified Purchasing + AP platform <span class="cc-mint">saves $39,400 per year</span> &mdash; before counting the savings Reeco drives through price comparison, recovered credits, and HSM rebate optimization.</div></div>
+    </div>
+    <div class="pricing-meta-note">
+      <div class="volume-note">M3 integration fees are fully waived for Reeco &mdash; the only procurement platform with this status.</div>
+    </div>
+
+    <!-- COMPARISON 1: Today vs. Reeco WITHOUT Inventory -->
+    <div class="cost-compare">
+      <div class="cost-compare-head"><div><h3>Option A &mdash; Today vs. Reeco Without Inventory</h3><p>What InnVentures spends today across three vendors &mdash; compared to Reeco&rsquo;s Purchasing + AP platform across all 59 properties, with no Inventory added.</p></div></div>
+      <div class="cc-grid">
+        <div class="cc-panel today">
+          <div class="cc-panel-label">Today &middot; Annual</div>
+          <div class="cc-panel-title">Three Separate Contracts</div>
+          <div class="cc-line"><span class="cc-item">Ottimate &mdash; AP Automation<span class="cc-sub">$15,150 / month</span></span><span class="cc-amt">$181,800</span></div>
+          <div class="cc-line"><span class="cc-item">M3 integration fees<span class="cc-sub">Charged to AP platforms</span></span><span class="cc-amt">~$11,000</span></div>
+          <div class="cc-line"><span class="cc-item">BirchStreet &mdash; Purchasing<span class="cc-sub">Via HSM agreement</span></span><span class="cc-amt">$59,000</span></div>
+          <div class="cc-total"><span class="cc-total-label">Total Today</span><span class="cc-total-amt">$251,800</span></div>
+        </div>
+        <div class="cc-arrow" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="cc-panel reeco">
+          <div class="cc-panel-label">Option A with Reeco &middot; Annual</div>
+          <div class="cc-panel-title">One Connected Platform</div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; AP Automation<span class="cc-sub">$100 / property / month &middot; 59 properties</span></span><span class="cc-amt">$70,800</span></div>
+          <div class="cc-line waived"><span class="cc-item">M3 integration fees<span class="cc-sub">Waived for Reeco customers</span></span><span class="cc-amt">$0</span></div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; Purchasing &amp; Receiving<span class="cc-sub">Your $59K HSM agreement redirects here</span></span><span class="cc-amt">$141,600</span></div>
+          <div class="cc-total"><span class="cc-total-label">Total Option A</span><span class="cc-total-amt">$212,400</span></div>
+        </div>
+      </div>
+      <div class="cc-delta">
+        <div class="cc-delta-figure">
+          <span class="cc-delta-label">Net Savings / Year</span>
+          <span class="cc-delta-amt">$39,400<span class="cc-per"> / yr</span></span>
+          <span class="cc-delta-perprop">That&rsquo;s about <strong>$56 per property, per month</strong></span>
+        </div>
+        <div class="cc-delta-body">Moving off Ottimate and BirchStreet onto Reeco&rsquo;s unified Purchasing + AP platform <span class="cc-mint">saves $39,400 per year</span> &mdash; before counting savings Reeco drives through price comparison, recovered credits, and HSM rebate optimization.</div>
+      </div>
       <div class="cc-note">Figures based on pricing above and current-spend numbers provided by InnVentures. The $59,000 HSM agreement is redirected from BirchStreet to Reeco purchasing &mdash; counted once, not as an additional credit.</div>
     </div>
+
+    <!-- COMPARISON 2: Today vs. Reeco WITH Inventory (All 59 Properties) -->
     <div class="cost-compare" style="margin-top:32px;">
-      <div class="cost-compare-head"><div><h3>Option B &mdash; Today vs. Reeco With Inventory (All 59 Properties)</h3><p>Adding Inventory across all 59 properties &mdash; $250/month per Full Service, $150/month per Select Service. The spend is higher than today, but it buys something the portfolio doesn&rsquo;t currently have: a consistent ordering standard backed by real counts, not guesswork.</p></div></div>
+      <div class="cost-compare-head"><div><h3>Option B &mdash; Today vs. Reeco With Inventory (All 59 Properties)</h3><p>Adding Inventory across the full portfolio &mdash; $250/month per Full Service property, $150/month per Select Service property. An investment above today&rsquo;s spend, for a capability InnVentures doesn&rsquo;t have today.</p></div></div>
       <div class="cc-grid">
-        <div class="cc-panel today"><div class="cc-panel-label">Today &middot; Annual</div><div class="cc-panel-title">Three Contracts, No Inventory</div><div class="cc-line"><span class="cc-item">Ottimate &mdash; AP Automation<span class="cc-sub">$15,150 / month</span></span><span class="cc-amt">$181,800</span></div><div class="cc-line"><span class="cc-item">M3 integration fees<span class="cc-sub">Charged to AP platforms</span></span><span class="cc-amt">~$11,000</span></div><div class="cc-line"><span class="cc-item">BirchStreet &mdash; Purchasing<span class="cc-sub">Via HSM agreement</span></span><span class="cc-amt">$59,000</span></div><div class="cc-line" style="opacity:0.45;"><span class="cc-item">Inventory<span class="cc-sub">Not included in any current contract</span></span><span class="cc-amt">&mdash;</span></div><div class="cc-total"><span class="cc-total-label">Total Today</span><span class="cc-total-amt">$251,800</span></div></div>
+        <div class="cc-panel today">
+          <div class="cc-panel-label">Today &middot; Annual</div>
+          <div class="cc-panel-title">Three Contracts, No Inventory</div>
+          <div class="cc-line"><span class="cc-item">Ottimate &mdash; AP Automation<span class="cc-sub">$15,150 / month</span></span><span class="cc-amt">$181,800</span></div>
+          <div class="cc-line"><span class="cc-item">M3 integration fees<span class="cc-sub">Charged to AP platforms</span></span><span class="cc-amt">~$11,000</span></div>
+          <div class="cc-line"><span class="cc-item">BirchStreet &mdash; Purchasing<span class="cc-sub">Via HSM agreement</span></span><span class="cc-amt">$59,000</span></div>
+          <div class="cc-line" style="opacity:0.45;"><span class="cc-item">Inventory<span class="cc-sub">Not included in any current contract</span></span><span class="cc-amt">&mdash;</span></div>
+          <div class="cc-total"><span class="cc-total-label">Total Today</span><span class="cc-total-amt">$251,800</span></div>
+        </div>
         <div class="cc-arrow" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="cc-panel reeco"><div class="cc-panel-label">Option B with Reeco &middot; Annual</div><div class="cc-panel-title">Full Platform + Inventory Everywhere</div><div class="cc-line"><span class="cc-item">Reeco &mdash; AP Automation<span class="cc-sub">$100 / property / month &middot; 59 properties</span></span><span class="cc-amt">$70,800</span></div><div class="cc-line waived"><span class="cc-item">M3 integration fees<span class="cc-sub">Waived for Reeco customers</span></span><span class="cc-amt">$0</span></div><div class="cc-line"><span class="cc-item">Reeco &mdash; Purchasing &amp; Receiving<span class="cc-sub">$200 / property / month &middot; 59 properties</span></span><span class="cc-amt">$141,600</span></div><div class="cc-line"><span class="cc-item">Reeco &mdash; Inventory &mdash; Full Service<span class="cc-sub">$250 / property / month &middot; 10 properties</span></span><span class="cc-amt">$30,000</span></div><div class="cc-line"><span class="cc-item">Reeco &mdash; Inventory &mdash; Select Service<span class="cc-sub">$150 / property / month &middot; 49 properties</span></span><span class="cc-amt">$88,200</span></div><div class="cc-total"><span class="cc-total-label">Total Option B</span><span class="cc-total-amt">$330,600</span></div></div>
+        <div class="cc-panel reeco">
+          <div class="cc-panel-label">Option B with Reeco &middot; Annual</div>
+          <div class="cc-panel-title">Full Platform + Inventory Everywhere</div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; AP Automation<span class="cc-sub">$100 / property / month &middot; 59 properties</span></span><span class="cc-amt">$70,800</span></div>
+          <div class="cc-line waived"><span class="cc-item">M3 integration fees<span class="cc-sub">Waived for Reeco customers</span></span><span class="cc-amt">$0</span></div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; Purchasing &amp; Receiving<span class="cc-sub">$200 / property / month &middot; 59 properties</span></span><span class="cc-amt">$141,600</span></div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; Inventory &mdash; Full Service<span class="cc-sub">$250 / property / month &middot; 10 properties</span></span><span class="cc-amt">$30,000</span></div>
+          <div class="cc-line"><span class="cc-item">Reeco &mdash; Inventory &mdash; Select Service<span class="cc-sub">$150 / property / month &middot; 49 properties</span></span><span class="cc-amt">$88,200</span></div>
+          <div class="cc-total"><span class="cc-total-label">Total Option B</span><span class="cc-total-amt">$330,600</span></div>
+        </div>
       </div>
-      <div class="cc-delta"><div class="cc-delta-figure"><span class="cc-delta-label">Additional Investment vs. Today</span><span class="cc-delta-amt" style="font-size:clamp(28px,4vw,40px);">+$78,800<span class="cc-per"> / yr</span></span><span class="cc-delta-perprop">That&rsquo;s <strong>$111 per property, per month</strong> for the full platform including Inventory</span></div><div class="cc-delta-body">Option B costs more than today &mdash; but it builds something the portfolio doesn&rsquo;t currently have: a consistent ordering standard across all 59 properties. Every manager runs a mobile count weekly, every reorder is tied to what&rsquo;s actually on the shelf, and the guesswork that drives over-ordering is replaced by par-driven purchasing. For Select Service, market and comp breakfast are where dollars leak most &mdash; and that&rsquo;s exactly where this pays back. <span class="cc-mint">No tool in the current stack does this</span> &mdash; and the compounding cost of not having it shows up in every over-ordered case that doesn&rsquo;t get used.</div></div>
+      <div class="cc-delta">
+        <div class="cc-delta-figure">
+          <span class="cc-delta-label">Additional Investment vs. Today</span>
+          <span class="cc-delta-amt" style="font-size:clamp(28px,4vw,40px);">+$78,800<span class="cc-per"> / yr</span></span>
+          <span class="cc-delta-perprop">That&rsquo;s <strong>$111 per property, per month</strong> for the full platform including Inventory</span>
+        </div>
+        <div class="cc-delta-body">Option B is an investment above today&rsquo;s spend &mdash; but it replaces three fragmented tools with a unified Purchasing + AP + Inventory platform and gives every property manager the guardrails they need to order the right items, in the right amounts, every time. <span class="cc-mint">No tool in your current stack does this.</span></div>
+      </div>
       <div class="cc-note">Select Service inventory pricing at $150/property/month subject to final confirmation. All other figures based on confirmed pricing above and current-spend numbers provided by InnVentures.</div>
     </div>
-    <script>function showPricingOption(opt,btn){document.getElementById('pricing-option-a').style.display=opt==='a'?'':'none';document.getElementById('pricing-option-b').style.display=opt==='b'?'':'none';document.querySelectorAll('.pricing-tab').forEach(function(b){b.classList.remove('active')});btn.classList.add('active')}</script>
-    <style>.pricing-option-tabs{display:flex;gap:12px;margin:28px 0 24px;flex-wrap:wrap;}.pricing-tab{display:flex;flex-direction:column;align-items:flex-start;padding:14px 22px;background:#fff;border:1.5px solid var(--stone-200,#e7e5e4);border-radius:10px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-align:left;}.pricing-tab:hover{border-color:var(--stone-400,#a8a29e);}.pricing-tab.active{border-color:var(--reeco-green,#22c55e);background:var(--green-50,#f0fdf4);}.pricing-tab .tab-label{font-size:12px;font-weight:700;color:var(--stone-900,#1c1917);letter-spacing:0.06em;text-transform:uppercase;}.pricing-tab .tab-desc{font-size:14px;color:var(--stone-600,#57534e);margin-top:3px;}.pricing-tab.active .tab-label{color:var(--green-700,#15803d);}</style>
+
+    <!-- INVENTORY VALUE: Josh Messer Quotes -->
+    <div style="margin-top:48px;padding:36px 40px;background:var(--stone-50,#fafaf9);border:1.5px solid var(--stone-200,#e7e5e4);border-radius:16px;">
+      <div class="eyebrow" style="margin-bottom:8px;">In Josh&rsquo;s Words</div>
+      <h3 style="font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--stone-900,#1c1917);margin:0 0 6px;">Why Inventory Changes the Game for InnVentures</h3>
+      <p style="color:var(--stone-600,#57534e);font-size:15px;margin:0 0 28px;">Pulled directly from Josh Messer&rsquo;s comments on your June 22, 2026 call &mdash; where he sees the real operational value.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">You get a new DOH at a Spring Hill, they have no clue what they&rsquo;re supposed to be ordering. So they just order what they think they are supposed to be ordering, then it shows up and they realize &mdash; oh, this wasn&rsquo;t the right product. So then they buy something else. And just keep trialing, erring.</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On the Select Service ordering problem</div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">How do we set up an inventory sheet for them that they can do a quick inventory on their phone on a weekly or bi-weekly basis, so they can actually see what the hell they&rsquo;re supposed to be spending their $4,000 in goods on that month?</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On mobile-first inventory for Select Service</div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">Where it allows them to save the most money is: are you managing your market inventory correctly, and are you managing your comp breakfast inventory correctly? The skill set of the people ordering for that market and comp breakfast are probably not where they need to be.</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On where the biggest ROI sits</div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">Every year on the year-end checklist we ask them to submit their inventories &mdash; the one time a year &mdash; and 50% of their hotels reach out and say: &ldquo;Do you have an inventory form?&rdquo; What have you been doing the last 12 months?</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On the year-end inventory reality check</div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">I would rather do it at all of them and make it our standard &mdash; this is how you&rsquo;re doing your ordering. Right now we don&rsquo;t really have that.</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On standardizing inventory across the full portfolio</div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--stone-200,#e7e5e4);border-radius:12px;padding:24px;">
+          <div style="font-size:36px;color:var(--stone-300,#d6d3d1);line-height:1;margin-bottom:8px;">&ldquo;</div>
+          <p style="font-size:14px;line-height:1.75;color:var(--stone-700,#44403c);margin:0 0 16px;font-style:italic;">Do you know that you don&rsquo;t need a seventh and eighth case of eggs this week when you only use half a case a week? We also don&rsquo;t need to purchase 15 cases of cheddar that you&rsquo;re going to end up throwing away because they spoiled.</p>
+          <div style="font-size:13px;font-weight:600;color:var(--stone-900,#1c1917);">Josh Messer &mdash; VP Operations, InnVentures</div>
+          <div style="font-size:12px;color:var(--stone-500,#78716c);margin-top:3px;">On over-ordering and food waste at Full Service</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- JS for option toggle -->
+    <script>
+    function showPricingOption(opt, btn) {
+      document.getElementById('pricing-option-a').style.display = opt === 'a' ? '' : 'none';
+      document.getElementById('pricing-option-b').style.display = opt === 'b' ? '' : 'none';
+      document.querySelectorAll('.pricing-tab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+    </script>
+
+    <!-- CSS for option tabs -->
+    <style>
+    .pricing-option-tabs{display:flex;gap:12px;margin:28px 0 24px;flex-wrap:wrap;}
+    .pricing-tab{display:flex;flex-direction:column;align-items:flex-start;padding:14px 22px;background:#fff;border:1.5px solid var(--stone-200,#e7e5e4);border-radius:10px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-align:left;}
+    .pricing-tab:hover{border-color:var(--stone-400,#a8a29e);}
+    .pricing-tab.active{border-color:var(--reeco-green,#22c55e);background:var(--green-50,#f0fdf4);}
+    .pricing-tab .tab-label{font-size:12px;font-weight:700;color:var(--stone-900,#1c1917);letter-spacing:0.06em;text-transform:uppercase;}
+    .pricing-tab .tab-desc{font-size:14px;color:var(--stone-600,#57534e);margin-top:3px;}
+    .pricing-tab.active .tab-label{color:var(--green-700,#15803d);}
+    .pricing-option-panel{}
+    </style>
+
   </div>
 </section>
 
